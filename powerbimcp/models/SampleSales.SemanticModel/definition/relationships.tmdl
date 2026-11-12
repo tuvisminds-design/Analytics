@@ -1,0 +1,6 @@
+relationship SalesToDate
+	fromCardinality: many
+	toCardinality: one
+	fromColumn: Sales.DateKey
+	toColumn: Date.DateKey
+	joinOnDateBehavior: datePartOnly

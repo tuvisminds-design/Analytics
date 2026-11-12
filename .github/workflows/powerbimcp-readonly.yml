@@ -1,0 +1,29 @@
+name: powerbimcp readonly probe
+
+on:
+  push:
+    paths:
+      - "powerbimcp/**"
+      - ".github/workflows/powerbimcp-readonly.yml"
+  pull_request:
+    paths:
+      - "powerbimcp/**"
+      - ".github/workflows/powerbimcp-readonly.yml"
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: powerbimcp
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: powerbimcp/package-lock.json
+      - run: npm ci
+      - run: npm run probe
+      - run: npm run connect:readonly

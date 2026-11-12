@@ -1,0 +1,18 @@
+{
+  "name": "powerbimcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Power BI Authoring MCP workspace with a Linux-compatible readonly local server and sample TMDL model.",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "probe": "node scripts/probe-mcp.mjs",
+    "connect:readonly": "node scripts/connect-sample-readonly.mjs",
+    "mcp:readonly": "npx --no-install @microsoft/powerbi-modeling-mcp --start --readonly"
+  },
+  "dependencies": {
+    "@microsoft/powerbi-modeling-mcp": "1.0.1"
+  }
+}
