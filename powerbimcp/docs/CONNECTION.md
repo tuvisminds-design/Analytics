@@ -13,10 +13,10 @@ measures, and relationships.
 | Check | Result |
 | --- | --- |
 | Namespace | `powerbi-authoring-local` |
-| Status | **error** — live tool discovery failed |
-| Tools available to the agent | none |
-| `mcp_auth` | Not applicable. This server is a local stdio command, not Cursor OAuth. |
-| MCP resources | Server not ready |
+| Status | **ready** after installing `bin/cmd-shim.sh` as `/usr/local/bin/cmd.exe` |
+| Tools discovered | Yes (21 modeling tools + `accept_eula`) |
+| First tool calls | Blocked until the Power BI Authoring MCP EULA is accepted in that process |
+| Desktop instances | Still 0 on this Linux VM |
 
 The session MCP config launched:
 
@@ -24,8 +24,9 @@ The session MCP config launched:
 cmd.exe /c npx -y @microsoft/powerbi-modeling-mcp@latest --start --readonly
 ```
 
-That command cannot start on this Linux Cloud Agent (`cmd.exe` is not installed).
-Cursor therefore never registered tools from the server.
+Linux has no Windows `cmd.exe`. `scripts/install-cmd-shim.sh` installs a POSIX
+stand-in so that command becomes `npx ... --start --readonly`. That fixes
+**server discovery**. It does not create a Power BI Desktop process.
 
 ## 2. Direct Linux process (this repo)
 
@@ -80,3 +81,18 @@ Then connect to a model:
 - This sample: `Open semantic model from PBIP folder 'models/SampleSales.SemanticModel/definition'`
 
 Keep `--readonly` unless you explicitly want modeling writes.
+
+## 3. Power BI Desktop: `ITSM_Service_Intelligence.pbix`
+
+Attempted with the official sequence (`ListLocalInstances`, then Connect to
+`localhost:<port>`). Result: **not connected**.
+
+| Check | Result |
+| --- | --- |
+| `ListLocalInstances` | 0 |
+| `.pbix` on this VM | not found |
+| ADOMD Desktop attach | Windows-only |
+| `ListConnections` | 0 |
+| Model writes | none |
+
+See [How it works](HOW_IT_WORKS.md) and `mcp-desktop-connect-result.json`.

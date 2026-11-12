@@ -10,6 +10,7 @@
   "scripts": {
     "probe": "node scripts/probe-mcp.mjs",
     "connect:readonly": "node scripts/connect-sample-readonly.mjs",
+    "connect:desktop": "node scripts/connect-desktop.mjs",
     "mcp:readonly": "npx --no-install @microsoft/powerbi-modeling-mcp --start --readonly"
   },
   "dependencies": {
