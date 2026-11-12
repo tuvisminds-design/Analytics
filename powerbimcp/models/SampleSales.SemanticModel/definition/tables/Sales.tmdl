@@ -1,0 +1,47 @@
+table Sales
+	lineageTag: 8d2f3b5c-0e4a-4d9f-b2c3-1e5f7a8b9d12
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e6f7081-92a3-b4c5-d6e7-f80516475869
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = "Automatic"
+
+	column Product
+		dataType: string
+		lineageTag: 6f708192-a3b4-c5d6-e7f8-061748596a7b
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = "Automatic"
+
+	column Amount
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 708192a3-b4c5-d6e7-f806-1748596a7b8c
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = "Automatic"
+
+	measure 'Sales Amount' = SUM(Sales[Amount])
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 8192a3b4-c5d6-e7f8-0617-48596a7b8c9d
+		displayFolder: Measures
+
+	partition Sales = m
+		mode: import
+		source =
+			let
+			    Source = #table(
+			        type table [DateKey = Int64.Type, Product = Text.Type, Amount = Number.Type],
+			        {
+			            {20240101, "Widget", 100},
+			            {20240102, "Gadget", 150.5}
+			        }
+			    )
+			in
+			    Source

@@ -1,0 +1,17 @@
+{
+  "probedAt": "2026-11-12T11:26:53.920Z",
+  "platform": "linux",
+  "arch": "x64",
+  "requestedFile": "ITSM_Service_Intelligence.pbix",
+  "connected": false,
+  "reason": "Power BI Desktop connections require Windows. This host is linux/x64, ListLocalInstances returned 0, and ADOMD Desktop attach is Windows-only.",
+  "localInstances": [],
+  "connections": [],
+  "connect": null,
+  "diagnostics": {
+    "isLinux": true,
+    "adomdWindowsOnly": true,
+    "pbixOnDisk": []
+  },
+  "errors": []
+}

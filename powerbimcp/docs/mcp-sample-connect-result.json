@@ -1,0 +1,66 @@
+{
+  "probedAt": "2026-11-12T11:02:13.890Z",
+  "folderPath": "/workspace/powerbimcp/models/SampleSales.SemanticModel/definition",
+  "connected": true,
+  "connection": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"message\":\"Successfully loaded database \\u0027\\u0027 from TMDL folder\",\"operation\":\"ConnectFolder\",\"data\":{\"connectionName\":\"TMDL-/workspace/powerbimcp/models/SampleSales.SemanticModel/definition\",\"folderPath\":\"/workspace/powerbimcp/models/SampleSales.SemanticModel/definition\",\"tablesLoaded\":2,\"measuresLoaded\":1,\"relationshipsLoaded\":1,\"loadedAt\":\"2026-11-12T11:02:14.9884063Z\"},\"warnings\":[\"Model loaded into memory from the TMDL folder. Changes made through MCP are not automatically written to disk. Run \\u0060ExportToTmdlFolder\\u0060 before disconnecting to persist them.\"]}"
+      }
+    ],
+    "isError": false,
+    "_meta": {
+      "annotations": {
+        "title": "connection_operations.connectfolder",
+        "readOnlyHint": true
+      }
+    }
+  },
+  "tables": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"message\":\"Found 2 tables\",\"operation\":\"List\",\"data\":[{\"columnCount\":4,\"partitionCount\":1,\"storageMode\":\"Import\",\"name\":\"Date\"},{\"columnCount\":3,\"measureCount\":1,\"partitionCount\":1,\"storageMode\":\"Import\",\"name\":\"Sales\"}]}"
+      }
+    ],
+    "isError": false,
+    "_meta": {
+      "annotations": {
+        "title": "table_operations.list",
+        "readOnlyHint": true
+      }
+    }
+  },
+  "measures": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"message\":\"Found 1 measures across 1 tables\",\"operation\":\"List\",\"data\":[{\"tableName\":\"Sales\",\"measures\":[{\"displayFolder\":\"Measures\",\"formatString\":\"\\\\$#,0.00;(\\\\$#,0.00);\\\\$#,0.00\",\"name\":\"Sales Amount\"}]}]}"
+      }
+    ],
+    "isError": false,
+    "_meta": {
+      "annotations": {
+        "title": "measure_operations.list",
+        "readOnlyHint": true
+      }
+    }
+  },
+  "relationships": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"message\":\"Found 1 relationships\",\"operation\":\"LIST\",\"data\":[{\"fromTable\":\"Sales\",\"fromColumn\":\"DateKey\",\"toTable\":\"Date\",\"toColumn\":\"DateKey\",\"isActive\":true,\"crossFilteringBehavior\":\"OneDirection\",\"fromCardinality\":\"Many\",\"toCardinality\":\"One\",\"name\":\"SalesToDate\"}]}"
+      }
+    ],
+    "isError": false,
+    "_meta": {
+      "annotations": {
+        "title": "relationship_operations.list",
+        "readOnlyHint": true
+      }
+    }
+  },
+  "errors": []
+}

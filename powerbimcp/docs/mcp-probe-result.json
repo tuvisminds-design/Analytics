@@ -1,0 +1,211 @@
+{
+  "probedAt": "2026-11-12T11:03:00.695Z",
+  "platform": "linux",
+  "arch": "x64",
+  "command": "/workspace/powerbimcp/node_modules/@microsoft/powerbi-modeling-mcp-linux-x64/dist/powerbi-modeling-mcp",
+  "args": [
+    "--start",
+    "--readonly",
+    "--accepteula"
+  ],
+  "connected": true,
+  "initialize": {
+    "protocolVersion": "2024-11-05",
+    "capabilities": {
+      "logging": {},
+      "prompts": {
+        "listChanged": true
+      },
+      "resources": {
+        "listChanged": true
+      },
+      "tools": {
+        "listChanged": true
+      }
+    },
+    "serverInfo": {
+      "name": "powerbi-authoring-local",
+      "title": "Power BI Authoring MCP Server (Local)",
+      "version": "1.0.1",
+      "description": "Author Power BI semantic models in Power BI Desktop, Microsoft Fabric workspaces, and local PBIP and TMDL files."
+    },
+    "instructions": "Use this server for semantic models in Microsoft Fabric workspaces, Power BI Desktop, or PBIP and TMDL files on disk. Connect to the target semantic model, Power BI Desktop model, or local files before performing model operations. Use only this server for a given authoring task; do not combine it with the hosted Power BI Authoring server."
+  },
+  "tools": [
+    {
+      "name": "measure_operations",
+      "description": "Perform operations on semantic model measures. All operations support both single and multiple items via list properties. Supported operations: Help, Create, Update, Delete, Get, List, Rename, Move, ExportTMDL. For Create and Update use Definitions. For Delete, Get, List, and ExportTMDL use References. For Rename use RenameDefinitions. For Move use MoveDefinitions. To move measures between tables, use the Move operation. Update operation cannot change table assignment; use Move instead. Batch options allow control over transaction behavior and error handling.",
+      "readOnlyHint": false,
+      "destructiveHint": true
+    },
+    {
+      "name": "partition_operations",
+      "description": "Perform operations on semantic model partitions. Supports batch operations for Create, Update, Delete, Refresh, Rename, and Get. Use the Operation parameter to specify: Help, List, Get, Create, Update, Delete, RefreshWithXMLA, RefreshWithAPI, CheckStatusOfRefreshWithAPI, CancelRefreshWithAPI, Rename, ExportTMDL, ExportTMSL. For Create and Update use Definitions. For Delete and Get use References.",
+      "readOnlyHint": false,
+      "destructiveHint": true
+    },
+    {
+      "name": "perspective_operations",
+      "description": "Perform operations on semantic model perspectives, perspective tables, perspective columns, perspective measures, and perspective hierarchies. Supported operations: Help, List, Get, Create, Update, Delete, Rename, ListTables, GetTables, AddTables, UpdateTables, RemoveTables, ListColumns, GetColumns, AddColumns, RemoveColumns, ListMeasures, GetMeasures, AddMeasures, RemoveMeasures, ListHierarchies, GetHierarchies, AddHierarchies, RemoveHierarchies, ExportTMDL. Use the Operation parameter to specify which operation to perform. PerspectiveName is required for all operations except List.",
+      "readOnlyHint": false,
+      "destructiveHint": true
+    },
+    {
+      "name": "transaction_operations",
+      "description": "Perform operations on Analysis Services transactions. Supported operations: Help, Begin, Commit, Rollback, GetStatus, ListActive. Use the Operation parameter to specify which operation to perform.",
+      "readOnlyHint": false,
+      "destructiveHint": true
+    },
+    {
+      "name": "relationship_operations",
+      "description": "Perform operations on semantic model relationships. Supported operations: Help, List, Get, Create, Update, Delete, Rename, Activate, Deactivate, Find, ExportTMDL. Use the Operation parameter to specify which operation to perform.",
+      "readOnlyHint": false,
+      "destructiveHint": true
+    },
+    {
+      "name": "trace_operations",
+      "description": "Perform trace operations on semantic models to capture and analyze Analysis Services events. Supported operations: Help, Start, Stop, Pause, Resume, Clear, Get, List, Fetch, ExportJSON. Use the Operation parameter to specify which operation to perform.",
+      "readOnlyHint": true,
+      "destructiveHint": null
+    },
+    {
+      "name": "connection_operations",
+      "description": "Perform operations on Microsoft tabular semantic model data source connections (PowerBI Desktop, Analysis Services, Fabric). Supported operations: Help, Connect, ConnectFabric, ConnectFolder, ConnectBimFile, Disconnect, GetConnection, ListConnections, ListLocalInstances. Use the Operation parameter to specify which operation to perform.",
+      "readOnlyHint": true,
+      "destructiveHint": null
+    },
+    {
+      "name": "object_translation_operations",
+      "description": "Perform operations on object translations within semantic model cultures. Supported operations: Help, Create, Update, Delete, Get, List. Use the Operation parameter to specify which operation to perform. Supported object types: Model, Table, Measure, Column, Hierarchy, Level, KPI.",
+      "readOnlyHint": false,
+      "destructiveHint": true
+    },
+    {
+      "name": "table_operations",
+      "description": "Perform operations on semantic model tables. All operations support both single and multiple items via list properties. Supported operations: Help, Create, CreateFieldParameter, Update, Delete, Get, List, RefreshWithXMLA, RefreshWithAPI, CheckStatusOfRefreshWithAPI, CancelRefreshWithAPI, Rename, MarkAsDateTable, GetSchema, ExportTMDL, ExportTMSL. For Create and Update use Definitions, for Delete, Get, Refresh, GetSchema, ExportTMDL, and ExportTMSL use References, and for Rename use RenameDefinitions. Batch options allow control over transaction behavior and error handling.",
+      "readOnlyHint": false,
+      "destructiveHint": true
+    },
+    {
+      "name": "database_operations",
+      "description": "Perform database-level operations on semantic models hosted in Power BI Desktop or Fabric service, or loaded offline from TMDL/BIM. Use List to enumerate databases and retrieve their names, IDs, compatibility levels, states, and processing timestamps. Supported operations: Help, Create, Update, List, ImportFromTmdlFolder, ExportToTmdlFolder, ImportFromBimFile, ExportToBimFile, ExportTMDL (YAML-like format), ExportTMSL (JSON script format), DeployToFabric. Use the Operation parameter to specify which operation to perform.",
+      "readOnlyHint": false,
+      "destructiveHint": true
+    },
+    {
+      "name": "security_role_operations",
+      "description": "Perform operations on semantic model security roles and table permissions. All CRUD operations support both single and multiple items via list properties. Supported operations: Help, Create, Update, Delete, Get, List, Rename, CreatePermissions, UpdatePermissions, DeletePermissions, GetPermissions, ListPermissions, GetEffectivePermissions, ExportTMDL, ExportTMSL. For Create, Update, Delete, Get, and Rename operations, provide a list of definitions or references even for single items. Batch options allow control over transaction behavior and error handling.",
+      "readOnlyHint": false,
+      "destructiveHint": true
+    },
+    {
+      "name": "column_operations",
+      "description": "Perform operations on semantic model columns. All operations support both single and multiple items via list properties. Supported operations: Help, Create, Update, Delete, Get, List, Rename, ExportTMDL. Use the Operation parameter to specify which operation to perform. For Create and Update use Definitions, for Delete, Get, List, and ExportTMDL use References, and for Rename use RenameDefinitions. Batch options allow control over transaction behavior and error handling.",
+      "readOnlyHint": false,
+      "destructiveHint": true
+    },
+    {
+      "name": "calendar_operations",
+      "description": "Perform operations on semantic model calendars and their column groups. All operations support both single and multiple items via list properties. Supported operations: Help, Create, Update, Delete, Get, List, Rename, ExportTMDL, CreateColumnGroups, UpdateColumnGroups, DeleteColumnGroups, GetColumnGroups, ListColumnGroups. Use the Operation parameter to specify which operation to perform. For Create, Update, Delete, Get, and Rename operations, provide a list of definitions or references even for single items. List and ExportTMDL work with individual items. Calendar objects define logical calendars as part of DAX Time-Intelligence support and are only supported when compatibility level is at least 1701. Batch options allow control over transaction behavior and error handling.",
+      "readOnlyHint": false,
+      "destructiveHint": true
+    },
+    {
+      "name": "model_operations",
+      "description": "Perform operations on semantic model. Supported operations: Help, Get, Create, Update, RefreshWithXMLA, RefreshWithAPI, CheckStatusOfRefreshWithAPI, CancelRefreshWithAPI, GetStats, Rename, ExportTMDL. Use the Operation parameter to specify which operation to perform. ExportTMDL exports the model to TMDL format.",
+      "readOnlyHint": false,
+      "destructiveHint": true
+    },
+    {
+      "name": "calculation_group_operations",
+      "description": "Perform operations on semantic model calculation groups and calculation items. Supports batch operations for creating, updating, deleting, getting, and renaming multiple groups and items at once. Supported operations: Help, CreateGroup, UpdateGroup, DeleteGroup, GetGroup, ListGroups, RenameGroup, CreateItems, UpdateItems, DeleteItems, GetItems, ListItems, RenameItems, ReorderItems, ExportTMDL. Use the Operation parameter to specify which operation to perform.",
+      "readOnlyHint": false,
+      "destructiveHint": true
+    },
+    {
+      "name": "dax_query_operations",
+      "description": "Perform DAX query operations on semantic models. Supported operations: Help, Execute, Validate, ClearCache. Use the Operation parameter to specify which operation to perform.",
+      "readOnlyHint": true,
+      "destructiveHint": null
+    },
+    {
+      "name": "named_expression_operations",
+      "description": "Perform operations on semantic model named expressions and Power Query parameters. All operations support both single and multiple items via list properties. Supported operations: Help, Create, Update, Delete, Get, List, Rename, CreateParameter, UpdateParameter, ExportTMDL. For Create, Update, CreateParameter, and UpdateParameter operations, provide Definitions. For Delete, Get, and ExportTMDL operations, provide References. For Rename, provide RenameDefinitions. Batch options allow control over transaction behavior and error handling.",
+      "readOnlyHint": false,
+      "destructiveHint": true
+    },
+    {
+      "name": "query_group_operations",
+      "description": "Perform operations on semantic model query groups. All operations support both single and multiple items via list properties. Supported operations: Help, Create, Update, Delete, Get, List, ExportTMDL. For Create and Update operations, provide Definitions. For Delete, Get, and ExportTMDL operations, provide References. Batch options allow control over transaction behavior and error handling.",
+      "readOnlyHint": false,
+      "destructiveHint": true
+    },
+    {
+      "name": "function_operations",
+      "description": "Perform operations on semantic model functions. Supported operations: Help, Create, Update, Delete, Get, List, Rename, ExportTMDL. Use the Operation parameter to specify which operation to perform. Use Definitions for Create and Update operations, and References for Delete, Get, and ExportTMDL operations.",
+      "readOnlyHint": false,
+      "destructiveHint": true
+    },
+    {
+      "name": "user_hierarchy_operations",
+      "description": "Perform operations on semantic model user hierarchies. All operations support both single and multiple items via list properties. Supported operations: Help, List, Get, Create, Update, Delete, Rename, GetColumns, AddLevels, RemoveLevels, UpdateLevels, RenameLevels, ReorderLevels, ExportTMDL. For Create, Update, Delete, Get, Rename, and level operations, provide a list of definitions or references even for single items. Batch options allow control over transaction behavior and error handling.",
+      "readOnlyHint": false,
+      "destructiveHint": true
+    },
+    {
+      "name": "culture_operations",
+      "description": "Perform operations on semantic model cultures. All operations support both single and multiple items via list properties. Supported operations: Help, Create, Update, Delete, Get, List, Rename, GetValidNames, GetValidDetails, GetDetailsByName, GetDetailsByLCID, ExportTMDL. For Create, Update, Delete, Get, and Rename operations, provide a list of definitions or references even for single items. List, GetValidNames, GetValidDetails, GetDetailsByName, GetDetailsByLCID, and ExportTMDL work with individual items. Batch options allow control over transaction behavior and error handling.",
+      "readOnlyHint": false,
+      "destructiveHint": true
+    }
+  ],
+  "prompts": [
+    {
+      "name": "CreateDAXQuery",
+      "description": "Creates a DAX query based on your semantic model and natural language question."
+    },
+    {
+      "name": "RunDAXQueryWithMetrics",
+      "description": "Executes the DAX query with option to clear the cache and return only the execution metrics."
+    },
+    {
+      "name": "ConnectToPBIP",
+      "description": "Loads the TMDL definition from the semantic model in the Power BI Project (pbip) files."
+    },
+    {
+      "name": "ConnectToPowerBIDesktop",
+      "description": "Searches for the Power BI Desktop Analysis Services instance that matches the file name and connects to it."
+    },
+    {
+      "name": "ConnectToFabric",
+      "description": "Connects to a semantic model in a Fabric Workspace."
+    },
+    {
+      "name": "AnalyzeDAXQuery",
+      "description": "Analyzes DAX query performance by running it with a cleared cache and reviewing execution metrics for potential issues."
+    }
+  ],
+  "resources": [
+    {
+      "uri": "resource://calendar_instructions_and_examples",
+      "name": "Calendar Instructions and Examples",
+      "description": "Guidelines for creating Power BI calendar objects"
+    },
+    {
+      "uri": "resource://dax_udf_instructions_and_examples",
+      "name": "DAX UDF Instructions and Examples",
+      "description": "Guidelines for creating Power BI DAX user-defined functions (UDFs)"
+    },
+    {
+      "uri": "resource://dax_query_instructions_and_examples",
+      "name": "DAX Query Instructions and Examples",
+      "description": "Guidelines for writing Power BI DAX queries"
+    },
+    {
+      "uri": "resource://powerbi_project_instructions",
+      "name": "PowerBI Project Instructions",
+      "description": "Instructions for structuring Power BI projects"
+    }
+  ],
+  "errors": []
+}
